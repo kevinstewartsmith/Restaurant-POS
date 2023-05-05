@@ -14,34 +14,32 @@ function Header() {
   };
 
   return (
-    <header className="header">
-      <div className="logo">
-        <Link to="/">Goal Setter</Link>
-      </div>
-      <ul>
-        {user ? (
-          <>
-            <li>
-              <button className="btn" onClick={onLogout}>
-                <FaSignOutAlt /> Logout
-              </button>
-            </li>
-          </>
-        ) : (
-          <>
-            <li>
-              <Link to="/login">
-                <FaSignInAlt /> Login
-              </Link>
-            </li>
-            <li>
-              <Link to="/register">
-                <FaUser /> Register
-              </Link>
-            </li>
-          </>
-        )}
-      </ul>
+    <header>
+      <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5 dark:bg-gray-800 text-white">
+        <div className="flex flex-wrap justify-between items-center">
+          <div className="flex justify-start items-center">
+            <Link to="/">Restaurant POS</Link>
+          </div>
+          <div className="flex items-center lg:order-2">
+            {user ? (
+              <>
+                <button className="btn" onClick={onLogout}>
+                  <FaSignOutAlt /> Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link className="mx-5" to="/login">
+                  <FaSignInAlt className="inline-block mx-1" /> Login
+                </Link>
+                <Link className="mx-5" to="/register">
+                  <FaUser className="inline-block mx-1" /> Register
+                </Link>
+              </>
+            )}
+          </div>
+        </div>
+      </nav>
     </header>
   );
 }
