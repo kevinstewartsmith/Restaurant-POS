@@ -23,6 +23,12 @@ function Header() {
           <div className="flex items-center lg:order-2">
             {user ? (
               <>
+                <Link className="mx-5" to="/menu">
+                  Menu
+                </Link>
+                <Link className="mx-5" to="/items">
+                  Menu Items
+                </Link>
                 <button className="btn" onClick={onLogout}>
                   <FaSignOutAlt className="inline-block" /> Logout
                 </button>
