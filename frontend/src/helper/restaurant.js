@@ -3,14 +3,14 @@ import { getToken } from "./user";
 
 const API_URL = "/api/restaurants/";
 
-export const createRestaurant = async (goalData) => {
+export const createRestaurant = async (restaurantData) => {
   const config = {
     headers: {
       Authorization: `Bearer ${getToken()}`,
     },
   };
 
-  const response = await axios.post(API_URL, goalData, config);
+  const response = await axios.post(API_URL, restaurantData, config);
 
   return response.data;
 };

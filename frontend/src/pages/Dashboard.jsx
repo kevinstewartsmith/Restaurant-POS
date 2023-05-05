@@ -27,24 +27,34 @@ function Dashboard() {
   }
 
   return (
-    <>
-      <section className="heading">
-        <h1>Welcome {user && user.name}</h1>
-        <p>Restaurants Dashboard</p>
-      </section>
-      <RestaurantForm />
-      <section className="content">
-        {data.length > 0 ? (
-          <div className="goals">
-            {data.map((restaurant) => (
-              <Restaurant key={restaurant._id} restaurant={restaurant} />
-            ))}
-          </div>
-        ) : (
-          <h3>You have not set any goals</h3>
-        )}
-      </section>
-    </>
+    <div className="bg-gray-50 dark:bg-gray-900">
+      <div className="justify-center px-6  mx-auto md:h-screen lg:py-0 text-white">
+        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+            Welcome {user && user.name}
+          </h1>
+        </div>
+
+        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+          <RestaurantForm />
+        </div>
+
+        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+          {data.length > 0 ? (
+            <div>
+              {data.map((restaurant) => (
+                <Restaurant key={restaurant._id} restaurant={restaurant} />
+              ))}
+            </div>
+          ) : (
+            <h3 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              You do not have any restaurants
+            </h3>
+          )}
+        </div>
+        <div />
+      </div>
+    </div>
   );
 }
 

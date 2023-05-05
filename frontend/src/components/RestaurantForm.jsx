@@ -28,7 +28,7 @@ function RestaurantForm() {
     <section className="form">
       <form onSubmit={onSubmit}>
         <div className="form-group">
-          <label htmlFor="text">Goal</label>
+          <label htmlFor="text">Restaurant</label>
           <input
             type="text"
             name="text"
@@ -40,7 +40,7 @@ function RestaurantForm() {
 
         <div className="form-group">
           <button className="btn btn-block" type="submit">
-            Add Goal
+            Create Restaurant
           </button>
         </div>
       </form>
