@@ -1,18 +1,19 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import GoalForm from "../components/GoalForm";
 import Spinner from "../components/Spinner";
-import GoalItem from "../components/GoalItem";
 import { useQuery } from "react-query";
-import { getGoals } from "../helper/goals";
+import { getRestaurants } from "../helper/restaurant";
 import { getUser } from "../helper/user";
+import Restaurant from "../components/Restaurant";
 
 function Dashboard() {
   const navigate = useNavigate();
 
   const user = getUser();
 
-  const { isLoading, data } = useQuery("goals", () => getGoals(user.token));
+  const { isLoading, data } = useQuery("restaurants", () =>
+    getRestaurants(user.token)
+  );
 
   useEffect(() => {
     if (!user) {
@@ -28,15 +29,14 @@ function Dashboard() {
     <>
       <section className="heading">
         <h1>Welcome {user && user.name}</h1>
-        <p>Goals Dashboard</p>
+        <p>Restaurants Dashboard</p>
       </section>
-      <GoalForm />
 
       <section className="content">
         {data.length > 0 ? (
           <div className="goals">
-            {data.map((goal) => (
-              <GoalItem key={goal._id} goal={goal} />
+            {data.map((restaurant) => (
+              <Restaurant key={restaurant._id} restaurant={restaurant} />
             ))}
           </div>
         ) : (

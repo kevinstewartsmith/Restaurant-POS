@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { createGoal } from "../helper/goals";
+import { createGoal } from "../helper/restaurant";
 import { useQueryClient, useMutation } from "react-query";
 import Spinner from "./Spinner";
 

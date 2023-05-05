@@ -1,9 +1,9 @@
 import axios from "axios";
 import { getToken } from "./user";
 
-const API_URL = "/api/goals/";
+const API_URL = "/api/restaurants/";
 
-export const createGoal = async (goalData) => {
+export const createRestaurant = async (goalData) => {
   const config = {
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -15,7 +15,7 @@ export const createGoal = async (goalData) => {
   return response.data;
 };
 
-export const getGoals = async () => {
+export const getRestaurants = async () => {
   const config = {
     headers: {
       Authorization: `Bearer ${getToken()}`,
@@ -27,7 +27,7 @@ export const getGoals = async () => {
   return response.data;
 };
 
-export const deleteGoal = async (id) => {
+export const deleteRestaurant = async (id) => {
   const config = {
     headers: {
       Authorization: `Bearer ${getToken()}`,
