@@ -23,8 +23,11 @@ function Header() {
           <div className="flex items-center lg:order-2">
             {user ? (
               <>
+                <Link className="mx-5" to="/">
+                  Restaurants
+                </Link>
                 <Link className="mx-5" to="/menu">
-                  Menu
+                  Menus
                 </Link>
                 <Link className="mx-5" to="/items">
                   Menu Items
