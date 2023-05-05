@@ -83,8 +83,8 @@ function Register() {
             <form className="space-y-4 md:space-y-6" onSubmit={onSubmit}>
               <div>
                 <label
-                  for="name"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="name"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Your name
                 </label>
@@ -102,8 +102,8 @@ function Register() {
 
               <div>
                 <label
-                  for="email"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Your email
                 </label>
@@ -121,8 +121,8 @@ function Register() {
 
               <div>
                 <label
-                  for="password"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="password"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Your password
                 </label>
@@ -140,8 +140,8 @@ function Register() {
 
               <div>
                 <label
-                  for="password2"
-                  class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  htmlFor="password2"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
                   Repeat password
                 </label>
