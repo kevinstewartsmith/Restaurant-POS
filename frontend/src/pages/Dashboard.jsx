@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import { getRestaurants } from "../helper/restaurant";
 import { getUser } from "../helper/user";
 import Restaurant from "../components/Restaurant";
+import RestaurantForm from "../components/RestaurantForm";
 
 function Dashboard() {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ function Dashboard() {
         <h1>Welcome {user && user.name}</h1>
         <p>Restaurants Dashboard</p>
       </section>
-
+      <RestaurantForm />
       <section className="content">
         {data.length > 0 ? (
           <div className="goals">

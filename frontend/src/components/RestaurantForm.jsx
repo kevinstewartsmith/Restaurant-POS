@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { createGoal } from "../helper/restaurant";
+import { createRestaurant } from "../helper/restaurant";
 import { useQueryClient, useMutation } from "react-query";
 import Spinner from "./Spinner";
 
-function GoalForm() {
+function RestaurantForm() {
   const [text, setText] = useState("");
   const queryClient = useQueryClient();
   const { mutate, isLoading } = useMutation({
-    mutationFn: createGoal,
+    mutationFn: createRestaurant,
     onSettled: () => {
-      queryClient.invalidateQueries("goals");
+      queryClient.invalidateQueries("restaurants");
     },
   });
 
@@ -48,4 +48,4 @@ function GoalForm() {
   );
 }
 
-export default GoalForm;
+export default RestaurantForm;
