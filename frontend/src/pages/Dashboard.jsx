@@ -15,7 +15,7 @@ function Dashboard() {
   const [showForm, setShowForm] = useState("");
 
   const { isLoading, data } = useQuery("restaurants", () =>
-    getRestaurants(user.token)
+    getRestaurants()
   );
 
   useEffect(() => {
