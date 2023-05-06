@@ -33,7 +33,7 @@ function MenuForm() {
       setDescription("");
       setRestaurant("");
     } else {
-      toast.error("Please fill all required data");
+      toast.error("Please fill all required fields");
     }
   };
 
@@ -58,7 +58,6 @@ function MenuForm() {
               name="name"
               id="name"
               value={name}
-              required={true}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -75,7 +74,6 @@ function MenuForm() {
               type="description"
               name="description"
               id="description"
-              required={true}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
             />
