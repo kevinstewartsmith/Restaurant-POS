@@ -15,7 +15,7 @@ function MenuItems() {
 
   const user = getUser();
 
-  const { isLoading, data } = useQuery("items", () => getMenuItems(user.token));
+  const { isLoading, data } = useQuery("items", () => getMenuItems());
 
   useEffect(() => {
     if (!user) {
