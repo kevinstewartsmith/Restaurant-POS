@@ -15,7 +15,7 @@ function Menu() {
 
   const user = getUser();
 
-  const { isLoading, data } = useQuery("menus", () => getMenus(user.token));
+  const { isLoading, data } = useQuery("menus", () => getMenus());
 
   useEffect(() => {
     if (!user) {
