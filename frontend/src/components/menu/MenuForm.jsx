@@ -3,7 +3,6 @@ import { createMenu } from "../../helper/menu";
 import { useQueryClient, useMutation, useQuery } from "react-query";
 import Spinner from "../Spinner";
 import { getRestaurants } from "../../helper/restaurant";
-import { getUser } from "../../helper/user";
 import { toast } from "react-toastify";
 
 function MenuForm() {
@@ -20,9 +19,8 @@ function MenuForm() {
     },
   });
 
-  const user = getUser();
   const { data, loading: queryLoading } = useQuery("restaurants", () =>
-    getRestaurants(user.token)
+    getRestaurants()
   );
 
   const onSubmit = (e) => {
