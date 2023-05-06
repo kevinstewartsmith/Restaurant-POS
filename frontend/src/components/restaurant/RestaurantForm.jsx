@@ -21,6 +21,7 @@ function RestaurantForm() {
 
     mutate({ name, description });
     setName("");
+    setDescription("");
   };
 
   if (isLoading) {
