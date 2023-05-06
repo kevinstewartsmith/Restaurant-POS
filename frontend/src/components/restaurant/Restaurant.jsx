@@ -17,7 +17,7 @@ function Restaurant({ restaurant }) {
   }
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg shadow-gray-700">
       <img
         className="w-full"
         src={restaurant.photo ? restaurant.photo : "boilerplate-image.jpg"}
