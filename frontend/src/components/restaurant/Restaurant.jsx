@@ -16,6 +16,10 @@ function Restaurant({ restaurant }) {
     return <Spinner />;
   }
 
+  const selectDefaultRestaurant = (id) => {
+    localStorage.setItem("restaurant", id);
+  };
+
   return (
     <div className="max-w-sm rounded overflow-hidden shadow-lg shadow-gray-700">
       <img
@@ -24,6 +28,7 @@ function Restaurant({ restaurant }) {
         alt="Restaurant"
       />
       <div className="px-6 py-4">
+        <p className="text-xl font-bold leading-tight tracking-tight text-blue-500 md:text-xl dark:text-blue">{localStorage.getItem("restaurant") === restaurant._id ? 'Selected Retaurant' : ''}</p>
         <div className="font-bold text-xl mb-2">{restaurant.name}</div>
         <p className="text-base">{restaurant.description}</p>
 
@@ -32,6 +37,13 @@ function Restaurant({ restaurant }) {
           className="text-xl font-bold leading-tight tracking-tight text-red-500 md:text-xl dark:text-red"
         >
           Delete Restaurant <AiFillDelete className="inline-block" />
+        </button>
+
+        <button
+          onClick={() => selectDefaultRestaurant(restaurant._id)}
+          className="text-xl font-bold leading-tight tracking-tight text-blue-500 md:text-xl dark:text-blue"
+        >
+          Select Default Restaurant
         </button>
       </div>
     </div>
