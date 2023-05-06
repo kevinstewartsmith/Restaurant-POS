@@ -7,6 +7,7 @@ import { getUser } from "../helper/user";
 import Table from "../components/table/Table";
 import TableForm from "../components/table/TableForm";
 import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
+import { toast } from "react-toastify";
 
 function Tables() {
   const navigate = useNavigate();
@@ -14,11 +15,17 @@ function Tables() {
   const user = getUser();
   const [showForm, setShowForm] = useState("");
 
-  const { isLoading, data } = useQuery("tables", () => getTables('64563a98dd06a71a9d2c5e29')); //TODO: make it possible to load current active restaurant 
+  const { isLoading, data } = useQuery("tables", () =>
+    getTables(localStorage.getItem("restaurant"))
+  );
 
   useEffect(() => {
     if (!user) {
       navigate("/login");
+    }
+
+    if (!localStorage.getItem("restaurant")) {
+      toast.error("Set restaurant at dashboard page");
     }
   }, [user, navigate]);
 
@@ -51,7 +58,11 @@ function Tables() {
               <AiOutlinePlusCircle size={50} />
             )}
           </button>
-          {showForm ? <TableForm /> : ""}
+          {showForm ? (
+            <TableForm restaurant={localStorage.getItem("restaurant")} />
+          ) : (
+            ""
+          )}
         </div>
 
         <div className="sm:p-8">
