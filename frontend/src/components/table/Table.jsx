@@ -20,7 +20,9 @@ function Table({ table }) {
     <div className="max-w-sm rounded overflow-hidden shadow-lg shadow-gray-700">
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{table.name}</div>
-        <p className="text-base">{table.status}</p>
+        <p className="text-base">
+          Status: {parseInt(table.status) === 1 ? "Occupied" : "Available"}
+        </p>
 
         <button
           onClick={() => mutate(table._id)}
