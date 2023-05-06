@@ -17,7 +17,7 @@ function Menu({ menu }) {
   }
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg">
+    <div className="max-w-sm rounded overflow-hidden shadow-lg shadow-gray-700">
       <img
         className="w-full"
         src={menu.photo ? menu.photo : "boilerplate-image.jpg"}
