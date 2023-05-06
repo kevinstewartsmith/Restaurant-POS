@@ -21,7 +21,7 @@ function Restaurant({ restaurant }) {
       <img
         className="w-full"
         src={restaurant.photo ? restaurant.photo : "boilerplate-image.jpg"}
-        alt="Sunset in the mountains"
+        alt="Restaurant"
       />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{restaurant.name}</div>
