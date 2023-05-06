@@ -14,6 +14,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
+app.use("/api/tables", require("./routes/tables"));
 app.use("/api/items", require("./routes/items"));
 app.use("/api/menus", require("./routes/menus"));
 app.use("/api/restaurants", require("./routes/restaurants"));
