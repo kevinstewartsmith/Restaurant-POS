@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { useQuery } from "react-query";
@@ -6,25 +6,34 @@ import { getMenus } from "../helper/menu";
 import { getUser } from "../helper/user";
 import MenuList from "../components/menu/Menu";
 import MenuForm from "../components/menu/MenuForm";
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
 function Menu() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
-    const user = getUser();
-  
-    const { isLoading, data } = useQuery("menus", () =>
-      getMenus(user.token)
-    );
-  
-    useEffect(() => {
-      if (!user) {
-        navigate("/login");
-      }
-    }, [user, navigate]);
-  
-    if (isLoading) {
-      return <Spinner />;
+  const [showForm, setShowForm] = useState("");
+
+  const user = getUser();
+
+  const { isLoading, data } = useQuery("menus", () => getMenus(user.token));
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
     }
+  }, [user, navigate]);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  const displayForm = () => {
+    if (showForm) {
+      setShowForm(0);
+    } else {
+      setShowForm(1);
+    }
+  };
 
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
@@ -36,7 +45,14 @@ function Menu() {
         </div>
 
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <MenuForm />
+          <button onClick={() => displayForm()}>
+            {showForm ? (
+              <AiOutlineMinusCircle size={50} />
+            ) : (
+              <AiOutlinePlusCircle size={50} />
+            )}
+          </button>
+          {showForm ? <MenuForm /> : ""}
         </div>
 
         <div className="sm:p-8">
