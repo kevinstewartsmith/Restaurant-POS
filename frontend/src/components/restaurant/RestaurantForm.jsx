@@ -2,6 +2,7 @@ import { useState } from "react";
 import { createRestaurant } from "../../helper/restaurant";
 import { useQueryClient, useMutation } from "react-query";
 import Spinner from "../Spinner";
+import { toast } from "react-toastify";
 
 function RestaurantForm() {
   const [name, setName] = useState("");
@@ -19,9 +20,13 @@ function RestaurantForm() {
   const onSubmit = (e) => {
     e.preventDefault();
 
-    mutate({ name, description });
-    setName("");
-    setDescription("");
+    if (name && description) {
+      mutate({ name, description });
+      setName("");
+      setDescription("");
+    } else {
+      toast.error("Please fill all required fields");
+    }
   };
 
   if (isLoading) {
