@@ -18,6 +18,7 @@ function Restaurant({ restaurant }) {
 
   const selectDefaultRestaurant = (id) => {
     localStorage.setItem("restaurant", id);
+    window.location.reload(false);
   };
 
   return (
