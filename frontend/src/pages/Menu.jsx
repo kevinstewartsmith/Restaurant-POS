@@ -39,9 +39,9 @@ function Menu() {
           <MenuForm />
         </div>
 
-        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <div className="sm:p-8">
           {data.length > 0 ? (
-            <div>
+            <div className="grid grid-flow-row gap-8 sm:grid-cols-1 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
               {data.map((menu) => (
                 <MenuList key={menu._id} menu={menu} />
               ))}
