@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../components/Spinner";
 import { useQuery } from "react-query";
@@ -6,15 +6,16 @@ import { getMenuItems } from "../helper/menuItem";
 import { getUser } from "../helper/user";
 import MenuItem from "../components/menuItem/MenuItem";
 import MenuItemForm from "../components/menuItem/MenuItemForm";
+import { AiOutlinePlusCircle, AiOutlineMinusCircle } from "react-icons/ai";
 
 function MenuItems() {
   const navigate = useNavigate();
 
+  const [showForm, setShowForm] = useState("");
+
   const user = getUser();
 
-  const { isLoading, data } = useQuery("items", () =>
-    getMenuItems(user.token)
-  );
+  const { isLoading, data } = useQuery("items", () => getMenuItems(user.token));
 
   useEffect(() => {
     if (!user) {
@@ -26,6 +27,14 @@ function MenuItems() {
     return <Spinner />;
   }
 
+  const displayForm = () => {
+    if (showForm) {
+      setShowForm(0);
+    } else {
+      setShowForm(1);
+    }
+  };
+
   return (
     <div className="bg-gray-50 dark:bg-gray-900">
       <div className="justify-center px-6  mx-auto h-max lg:py-0 text-white">
@@ -36,7 +45,14 @@ function MenuItems() {
         </div>
 
         <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-          <MenuItemForm />
+          <button onClick={() => displayForm()}>
+            {showForm ? (
+              <AiOutlineMinusCircle size={50} />
+            ) : (
+              <AiOutlinePlusCircle size={50} />
+            )}
+          </button>
+          {showForm ? <MenuItemForm /> : ""}
         </div>
 
         <div className="sm:p-8">
