@@ -14,7 +14,7 @@ function Tables() {
   const user = getUser();
   const [showForm, setShowForm] = useState("");
 
-  const { isLoading, data } = useQuery("tables", () => getTables('64563a98dd06a71a9d2c5e29'));
+  const { isLoading, data } = useQuery("tables", () => getTables('64563a98dd06a71a9d2c5e29')); //TODO: make it possible to load current active restaurant 
 
   useEffect(() => {
     if (!user) {
