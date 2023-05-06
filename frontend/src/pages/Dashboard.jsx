@@ -39,9 +39,9 @@ function Dashboard() {
           <RestaurantForm />
         </div>
 
-        <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
+        <div className="sm:p-8">
           {data.length > 0 ? (
-            <div>
+            <div className="grid grid-flow-row gap-8 text-neutral-600 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {data.map((restaurant) => (
                 <Restaurant key={restaurant._id} restaurant={restaurant} />
               ))}
