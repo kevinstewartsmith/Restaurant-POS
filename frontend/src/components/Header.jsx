@@ -32,6 +32,9 @@ function Header() {
                 <Link className="mx-5" to="/items">
                   Menu Items
                 </Link>
+                <Link className="mx-5" to="/tables">
+                  Tables
+                </Link>
                 <button className="btn" onClick={onLogout}>
                   <FaSignOutAlt className="inline-block" /> Logout
                 </button>
