@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { createRestaurant } from "../helper/restaurant";
+import { createRestaurant } from "../../helper/restaurant";
 import { useQueryClient, useMutation } from "react-query";
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 
 function RestaurantForm() {
   const [name, setName] = useState("");

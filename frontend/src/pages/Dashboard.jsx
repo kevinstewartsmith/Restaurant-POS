@@ -4,8 +4,8 @@ import Spinner from "../components/Spinner";
 import { useQuery } from "react-query";
 import { getRestaurants } from "../helper/restaurant";
 import { getUser } from "../helper/user";
-import Restaurant from "../components/Restaurant";
-import RestaurantForm from "../components/RestaurantForm";
+import Restaurant from "../components/restaurant/Restaurant";
+import RestaurantForm from "../components/restaurant/RestaurantForm";
 
 function Dashboard() {
   const navigate = useNavigate();

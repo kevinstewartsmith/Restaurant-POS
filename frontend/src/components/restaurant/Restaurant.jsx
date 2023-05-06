@@ -1,6 +1,6 @@
-import { deleteRestaurant } from "../helper/restaurant";
+import { deleteRestaurant } from "../../helper/restaurant";
 import { useQueryClient, useMutation } from "react-query";
-import Spinner from "./Spinner";
+import Spinner from "../Spinner";
 import { AiFillDelete } from "react-icons/ai";
 
 function Restaurant({ restaurant }) {
