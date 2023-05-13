@@ -1,85 +1,47 @@
-# Restaurant POS
+<h1 align="center">POS System for Cafes and Restaurants in MERN Stack with per Table Invoicing. 🖥️</h1>
+<br>
 
-# Introduction
-- Create an Restaurant
-- Create Menu
-- Create QR Code for the Menu
-- Create Tables
-- Add option to generate invoice per table
-- Save invoice to database
+## Features
 
-# Flow
-- Customer comes into the Restaurant.
-- Customer scanns QR code at the table.
-- Restaurant checks table availability.
-- Load menu list to the customer.
-- Customer picks menu and orders.
-- After customer is done - finish order and request invoice (to pay).
-- New Invoice is generated and table is available for new customers.
-- For previous customer - new popup shows to rate the restaurant.   
+- Create Mulitple Menus for different ocassions.
+- Create Menu Items with pricing.
+- Add Tables and Invoice per Table.
+- Get Real time informations about each table order.
+- Use QR Codes per Table.
+- Use POS Display to make it possible to order without taking an table.
 
-# From the Restaurant Owner Point of the view
-- After logging in Restaurant Owner can
-  - Create/Read/Update/Delete Menu/s
-  - Create/Read/Update/Delete Table/s
-  - Create/Read/Update/Delete Cart/s
-  - Create/Read/Update/Delete Menu Item/s
-  - Create/Read Invoice/s
-  - Create/Read/Update Restauran/s
-- Display Tables Order Info (For Kitchen mostly) and what is fulfilled / on waiting
+## Contributing
+Feel like contributing? That's awesome!
 
-# Database:
+Thanks for showing interest to contribute to Restaurant POS System 💖, you rock!
 
-## User
-- Name      : String Required
-- Email     : String Required
+There are different ways you can contribute, all of which are valuable:
+- Fork the project
+- Take on one of active issues
+- Make a pull request
 
-## Restaurant
-- Name        : String Required
-- Description : String Required
-- Logo        : String Required
-- User        : Object Required
+[Here are a few guidelines](CONTRIBUTING.md) that should help you as you prepare to make your contribution.
 
-## Menu
-- Name        : String Required
-- Description : String Required
-- Menu Items  : Object Array
+If you have any questions, feel free to contact us on Github discussions or issues page.
 
-## Menu Item
-- Name        : String Required
-- Description : String Required
-- Price       : Float Required
-- Photo       : String Required
-- 
-## Table
-- Status : String Required
+We are always active on discord server.
 
-# Cart
-- Table     : Object Required
-- Menu Item : Object Required
-- Qty       : Int Required
+If you like the project, but don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
+> - Star the project
+> - Tweet about it
+> - Refer to this project in your project's README
+> - Share on your socials ([Facebook](https://www.facebook.com/profile.php?id=100088394168553), [Instagram](https://www.instagram.com/evilbeesdev/), [TikTok](https://www.tiktok.com/@evilbeesdev), [YouTube](https://www.youtube.com/@evilbees), [LinkedIn](https://www.linkedin.com/company/evil-bees/))
+> - Mention the project at local meetups and tell your friends/colleagues
 
-## Invoice
-- Cart  : Object Required
-- Total : Float Required
+Run the development server:
 
-# Additionals
-Include Blockchain wallet and possibility of using crypto
-
-
-### Install dependencies
-
-```
-# Backend deps
+```bash
 npm install
-
-# Frontend deps
-cd frontend
-npm install
+npm run dev
 ```
 
-### Run Server
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 ```
-npm run server
+* To avoid merge conflicts, please pull from the main branch before making any changes.
 ```
